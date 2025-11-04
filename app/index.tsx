@@ -1,3 +1,4 @@
+import { Image as ExpoImage } from "expo-image";
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
@@ -48,8 +49,8 @@ export default function LandingScreen() {
       />
       <View style={styles.content}>
         <StatusBar style="light" />
-        <Image
-          source={require("../assets/images/logo-light.png")}
+        <ExpoImage
+          source={require("../assets/images/logo-light.svg")}
           style={styles.logo}
         />
         <Text style={styles.title}>

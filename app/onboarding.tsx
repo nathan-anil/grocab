@@ -1,9 +1,9 @@
+import { Image as ExpoImage } from "expo-image";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as SystemUI from "expo-system-ui";
 import { useEffect, useState } from "react";
 import {
-  Image,
   ImageBackground,
   StyleSheet,
   Text,
@@ -105,8 +105,8 @@ export default function OnboardingScreen() {
       <StatusBar style="light" />
 
       {/* Logo */}
-      <Image
-        source={require("../assets/images/logo-light.png")}
+      <ExpoImage
+        source={require("../assets/images/logo-light.svg")}
         style={styles.logo}
       />
 
@@ -129,8 +129,8 @@ export default function OnboardingScreen() {
           <View style={styles.speechBubbleTail} />
         </View>
 
-        <Image
-          source={require("../assets/images/mascot.png")}
+        <ExpoImage
+          source={require("../assets/images/mascot.svg")}
           style={styles.mascot}
         />
       </View>
