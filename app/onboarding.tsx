@@ -2,6 +2,7 @@ import { Image as ExpoImage } from "expo-image";
 import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import * as SystemUI from "expo-system-ui";
+import { MotiView } from "moti";
 import { useEffect, useState } from "react";
 import {
   ImageBackground,
@@ -129,10 +130,21 @@ export default function OnboardingScreen() {
           <View style={styles.speechBubbleTail} />
         </View>
 
-        <ExpoImage
-          source={require("../assets/images/mascot.svg")}
-          style={styles.mascot}
-        />
+        <MotiView
+          from={{ opacity: 0, translateY: 30 }}
+          animate={{ opacity: 1, translateY: 0 }}
+          transition={{
+            type: "timing",
+            duration: 600,
+            delay: 200,
+          }}
+          key={currentStep}
+        >
+          <ExpoImage
+            source={require("../assets/images/mascot.svg")}
+            style={styles.mascot}
+          />
+        </MotiView>
       </View>
 
       {/* Options Grid */}
@@ -246,6 +258,7 @@ const styles = StyleSheet.create({
     width: 180,
     height: 180,
     resizeMode: "contain",
+    marginLeft: -60,
   },
   optionsContainer: {
     marginBottom: 20,
@@ -262,7 +275,7 @@ const styles = StyleSheet.create({
   },
   optionButton: {
     backgroundColor: "#fff",
-    paddingHorizontal: 20,
+    paddingHorizontal: 10,
     paddingVertical: 16,
     borderRadius: 12,
     width: "48%",
@@ -275,11 +288,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.1,
     shadowRadius: 3,
     elevation: 3,
+    borderWidth: 2,
+    borderColor: "transparent",
   },
   optionButtonSelected: {
-    backgroundColor: "#4CAF50",
+    backgroundColor: "#1BA8FF",
     borderWidth: 2,
-    borderColor: "#388E3C",
+    borderColor: "#1BA8FF80",
   },
   optionText: {
     fontSize: 14,

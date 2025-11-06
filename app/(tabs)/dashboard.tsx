@@ -1,6 +1,7 @@
 import { WordActionModal } from "@/components/word-action-modal";
 import { WordItem } from "@/components/word-item";
 import { Image } from "expo-image";
+import { useRouter } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { MotiView } from "moti";
 import { useState } from "react";
@@ -29,6 +30,8 @@ export default function DashboardScreen() {
   const [selectedWord, setSelectedWord] = useState<string | null>(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
+
+  const router = useRouter();
 
   const handleWordPress = (word: string) => {
     setSelectedWord(word);
@@ -189,7 +192,10 @@ export default function DashboardScreen() {
               contentFit="contain"
             />
 
-            <TouchableOpacity style={styles.startReadingButton}>
+            <TouchableOpacity
+              style={styles.startReadingButton}
+              onPress={() => router.push("/reading")}
+            >
               <Text style={styles.startReadingButtonText}>Start</Text>
             </TouchableOpacity>
           </View>
@@ -223,7 +229,10 @@ export default function DashboardScreen() {
               contentFit="contain"
             />
 
-            <TouchableOpacity style={styles.startReadingButton}>
+            <TouchableOpacity
+              style={styles.startReadingButton}
+              onPress={() => router.push("/review")}
+            >
               <Text style={styles.startReadingButtonText}>Start</Text>
             </TouchableOpacity>
           </View>

@@ -54,14 +54,6 @@ export function CustomTabButton({
     >
       <View style={[styles.button, isFocused && styles.activeButton]}>
         <View style={styles.iconContainer}>{children}</View>
-        <Text
-          style={[
-            styles.label,
-            isFocused ? styles.activeLabel : styles.inactiveLabel,
-          ]}
-        >
-          {label}
-        </Text>
       </View>
     </AnimatedPressable>
   );
@@ -77,10 +69,10 @@ const styles = StyleSheet.create({
   button: {
     alignItems: "center",
     justifyContent: "center",
-    paddingVertical: 10,
-    paddingHorizontal: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
     borderRadius: 25,
-    minWidth: 75,
+    minWidth: 50,
   },
   activeButton: {
     backgroundColor: "#E6F4FF",
@@ -93,18 +85,7 @@ const styles = StyleSheet.create({
     elevation: 6,
   },
   iconContainer: {
-    marginBottom: 2,
-  },
-  label: {
-    fontSize: 11,
-    fontWeight: "600",
-    marginTop: 2,
-  },
-  activeLabel: {
-    color: "#1BA8FF",
-  },
-  inactiveLabel: {
-    color: "#8E8E93",
+    // Icon only, no label
   },
 });
 

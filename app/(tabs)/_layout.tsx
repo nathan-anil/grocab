@@ -46,7 +46,7 @@ export default function TabLayout() {
           borderTopColor: "#E5E5EA",
           height: 60 + insets.bottom,
           paddingBottom: insets.bottom,
-          paddingTop: 4,
+          paddingTop: 0,
           elevation: 8,
           shadowColor: "#000",
           shadowOffset: { width: 0, height: -2 },
