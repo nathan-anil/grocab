@@ -1,5 +1,12 @@
+import { router } from "expo-router";
 import { StatusBar } from "expo-status-bar";
-import { ScrollView, StyleSheet, Text, View } from "react-native";
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function ProfileScreen() {
   return (
@@ -10,9 +17,12 @@ export default function ProfileScreen() {
         <Text style={styles.subtitle}>Manage your account and preferences</Text>
 
         <View style={styles.content}>
-          <Text style={styles.contentText}>
-            View and edit your profile information, settings, and preferences.
-          </Text>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => router.push("/")}
+          >
+            <Text style={styles.buttonText}>Logout</Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </View>
@@ -45,5 +55,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
     color: "#333",
+  },
+  button: {
+    backgroundColor: "#1BA8FF",
+    padding: 10,
+    borderRadius: 8,
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+    textAlign: "center",
   },
 });
