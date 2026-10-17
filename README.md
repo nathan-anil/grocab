@@ -1,6 +1,4 @@
-# Welcome to your Expo app 👋
-
-Landing Page hosted at [grocab.app](https://grocab.app)
+# Landing Page hosted at [grocab.app](https://grocab.app)
 
 
 ## Get started
